@@ -287,11 +287,13 @@ h1, h2, h3 { font-weight: 600; color: var(--text-primary); }
 footer { text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid var(--glass-border); }
 
 @media (max-width: 1024px) {
-    .interactive-hub { gap: 1rem; }
+    .interactive-hub { flex-direction: column; gap: 1rem; justify-content: flex-start; min-height: auto; padding-bottom: 2rem; }
+    .rpi-container { max-width: 100%; flex: none; width: 100%; }
+    .dynamic-display-area { width: 100%; margin-top: 0; padding: 0; min-height: auto; }
     .about-grid { grid-template-columns: 1fr; }
     .lcd-menu-container { 
         position: absolute; 
-        top: 80%; 
+        top: 70%; 
         left: 50%;
         right: auto;
         transform: translate(-50%, 20px); 
@@ -303,4 +305,20 @@ footer { text-align: center; padding: 2rem; color: var(--text-secondary); font-s
     .lcd-menu-container.active {
         transform: translate(-50%, 0);
     }
+}
+
+@media (max-width: 768px) {
+    .profile-header { flex-direction: column; text-align: center; }
+    .lcd-menu-container { max-width: 280px; width: 85%; }
+    .lcd-header { font-size: 1.2rem; }
+    .lcd-screen li { font-size: 1rem; padding: 8px 10px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 2rem; }
+    .container { padding: 0 15px; }
+    .initial-message p { font-size: 0.9rem; }
+}
+
+@media (max-width: 400px) {
+    .lcd-menu-container { max-width: 240px; }
+    .lcd-screen li { font-size: 0.9rem; }
 }
