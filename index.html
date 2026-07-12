@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Omar Mlika - Embedded Systems Engineer, Robotics Enthusiast, and IEEE IIP Chair.">
+    <title>Omar Mlika | Embedded Systems & Robotics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">OM<span>.</span></a>
+        </div>
+    </nav>
+
+    <main class="interactive-hub" id="hub">
+        <div class="rpi-container">
+            <!-- Generated SVG Raspberry Pi -->
+            <svg viewBox="0 0 800 530" class="rpi-svg-board" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="pins" width="22.5" height="30" patternUnits="userSpaceOnUse" patternTransform="translate(100, 25)">
+                        <circle cx="11.25" cy="8" r="3" fill="#B8860B"/>
+                        <circle cx="11.25" cy="22" r="3" fill="#B8860B"/>
+                    </pattern>
+                    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+                        <feDropShadow dx="3" dy="5" stdDeviation="5" flood-color="#000" flood-opacity="0.6"/>
+                    </filter>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                <!-- Main Board -->
+                <rect x="20" y="20" width="760" height="490" rx="20" fill="#2E8B57" stroke="#1E653A" stroke-width="4" filter="url(#shadow)" />
+                
+                <!-- Holes -->
+                <circle cx="50" cy="50" r="15" fill="#FFD700"/><circle cx="50" cy="50" r="8" fill="#111"/>
+                <circle cx="50" cy="480" r="15" fill="#FFD700"/><circle cx="50" cy="480" r="8" fill="#111"/>
+                <circle cx="750" cy="50" r="15" fill="#FFD700"/><circle cx="750" cy="50" r="8" fill="#111"/>
+                <circle cx="750" cy="480" r="15" fill="#FFD700"/><circle cx="750" cy="480" r="8" fill="#111"/>
+                
+                <!-- Circuit Traces -->
+                <path d="M180,230 L120,230 L120,170 L70,170" fill="none" stroke="#4DA674" stroke-width="4"/>
+                <path d="M250,160 L250,55" fill="none" stroke="#4DA674" stroke-width="4"/>
+                <path d="M300,160 L300,100 L360,100 L360,80" fill="none" stroke="#4DA674" stroke-width="4"/>
+                <path d="M320,230 L360,230" fill="none" stroke="#4DA674" stroke-width="4" stroke-dasharray="5,5"/>
+                <path d="M230,300 L230,360 L140,360 L140,400" fill="none" stroke="#4DA674" stroke-width="4"/>
+                <path d="M290,430 L290,380 L420,380" fill="none" stroke="#4DA674" stroke-width="4"/>
+                <path d="M480,380 L560,380 L560,400 L640,400" fill="none" stroke="#4DA674" stroke-width="4"/>
+                <path d="M440,200 L480,200" fill="none" stroke="#4DA674" stroke-width="4"/>
+                <path d="M380,75 L520,75 L520,130 L620,130" fill="none" stroke="#4DA674" stroke-width="4"/>
+                <path d="M440,270 L640,270" fill="none" stroke="#4DA674" stroke-width="4"/>
+                
+                <!-- GPIO Header -->
+                <rect x="100" y="25" width="450" height="30" fill="#111" rx="2" filter="url(#shadow)"/>
+                <rect x="100" y="25" width="450" height="30" fill="url(#pins)"/>
+                
+                <!-- DSI & CSI Connectors -->
+                <rect x="50" y="150" width="20" height="120" fill="#E0E0E0" stroke="#999" rx="2" filter="url(#shadow)"/>
+                <rect x="58" y="155" width="4" height="110" fill="#222"/>
+                <rect x="480" y="100" width="20" height="120" fill="#E0E0E0" stroke="#999" rx="2" filter="url(#shadow)"/>
+                <rect x="488" y="105" width="4" height="110" fill="#222"/>
+                
+                <!-- SOC (CPU) -->
+                <rect x="180" y="160" width="140" height="140" rx="5" fill="#2c2c2c" stroke="#444" stroke-width="2" filter="url(#shadow)"/>
+                <text x="250" y="225" fill="#777" font-family="monospace" font-size="18" text-anchor="middle" font-weight="bold">OMAR.MLIKA</text>
+                
+                <!-- RAM / Other chips -->
+                <rect x="360" y="180" width="80" height="100" rx="3" fill="#1a1a1a" filter="url(#shadow)"/>
+                <rect x="420" y="350" width="60" height="60" rx="2" fill="#1a1a1a" filter="url(#shadow)"/>
+                <rect x="340" y="60" width="40" height="20" rx="1" fill="#1a1a1a"/>
+                <rect x="120" y="400" width="40" height="40" rx="1" fill="#1a1a1a" filter="url(#shadow)"/>
+                
+                <!-- Status LEDs -->
+                <g id="status-leds" transform="translate(60, 360)">
+                    <rect x="0" y="0" width="10" height="14" fill="#222" rx="1"/>
+                    <rect x="2" y="2" width="6" height="10" fill="#ff2222" style="filter: drop-shadow(0 0 3px #ff2222);"/>
+                    
+                    <rect x="20" y="0" width="10" height="14" fill="#222" rx="1"/>
+                    <rect x="22" y="2" width="6" height="10" fill="#114411" id="led-act" style="transition: all 0.05s;"/>
+                </g>
+                
+                <!-- Ethernet & USB Ports -->
+                <rect x="620" y="70" width="160" height="120" rx="4" fill="#C0C0C0" stroke="#999" stroke-width="3" filter="url(#shadow)"/>
+                <rect x="640" y="215" width="140" height="110" rx="4" fill="#C0C0C0" stroke="#999" stroke-width="3" filter="url(#shadow)"/>
+                <rect x="640" y="345" width="140" height="110" rx="4" fill="#C0C0C0" stroke="#999" stroke-width="3" filter="url(#shadow)"/>
+                
+                <!-- Port details -->
+                <rect x="640" y="90" width="140" height="80" fill="#111" opacity="0.1"/>
+                <rect x="660" y="235" width="120" height="70" fill="#111" opacity="0.1"/>
+                <rect x="660" y="365" width="120" height="70" fill="#111" opacity="0.1"/>
+                
+                <!-- Interactive Button -->
+                <g id="rpi-button" style="cursor: pointer;" transform="translate(250, 430)">
+                    <rect x="0" y="0" width="80" height="60" rx="8" fill="#111" filter="url(#shadow)"/>
+                    <rect x="10" y="10" width="60" height="40" rx="5" fill="#333"/>
+                    <circle cx="40" cy="30" r="16" fill="#FF3333" id="rpi-button-core"/>
+                    <!-- Pulsing rings -->
+                    <circle cx="40" cy="30" r="16" fill="none" stroke="#00e5ff" stroke-width="2" class="svg-pulse-1" />
+                    <circle cx="40" cy="30" r="16" fill="none" stroke="#00e5ff" stroke-width="2" class="svg-pulse-2" />
+                </g>
+            </svg>
+            
+            <div class="lcd-menu-container" id="lcd-menu">
+                <div class="lcd-screen">
+                    <div class="lcd-header">System.Menu_</div>
+                    <ul>
+                        <li data-target="about">> About Me</li>
+                        <li data-target="experience">> Experience</li>
+                        <li data-target="projects">> Projects</li>
+                        <li data-target="contact">> Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="dynamic-display-area" id="display-area">
+            <div class="display-content" id="display-content">
+                <!-- Content will be injected here -->
+                <div class="initial-message glass-card">
+                    <i class="fas fa-terminal" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem;"></i>
+                    <p>System Ready. Please press the red button on the Raspberry Pi board to load modules.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Hidden Content Templates -->
+    <div id="content-templates" style="display: none;">
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title lcd-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text glass-card">
+                        <div class="profile-header">
+                            <img src="1781286971914.jpg" alt="Omar Mlika" class="profile-img">
+                            <div class="profile-info">
+                                <p>I am an <strong>Embedded Systems Engineer</strong> obsessed with building intelligent, autonomous systems from the ground up. My background blends rigorous academic training at ISSAT Sousse with extensive hands-on execution ranging from developing edge AI computer vision pipelines on Raspberry Pi and ESP32 platforms to diagnosing complex hardware systems.</p>
+                                <p>I specialize in <strong>Embedded C, Python, and FPGA design</strong>, combining technical troubleshooting with strong collaborative teamwork to bring innovative IoT and robotics projects to life.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-container glass-card">
+                        <h3>Core Competencies</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">Embedded Systems</span>
+                            <span class="skill-tag">Robotics</span>
+                            <span class="skill-tag">Edge AI</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">Embedded C</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">IoT</span>
+                            <span class="skill-tag">FPGA Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title lcd-title">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Industrial Maintenance Technician (Freelance)</h3>
+                            <span class="date">Jul 2024 - Present</span>
+                            <p>Working on production equipment for electrical and mechanical maintenance. Implementing safety procedures and utilizing diagnostic/measurement tools.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Chairman - IAS/IES/PES</h3>
+                            <span class="date">Jan 2026 - Present</span>
+                            <p>IEEE ESSTHS Student Branch. Leading technical trainings in IoT, mentoring future engineers, and organizing impactful events.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Maintenance Technician (Internship)</h3>
+                            <span class="date">Jul 2025 - Aug 2025</span>
+                            <p><strong>LEONI</strong>. Participated in preventive and corrective maintenance on production lines, diagnosing electrical and electronic systems.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Education: ISSAT Sousse</h3>
+                            <span class="date">Sep 2023 - Jun 2026</span>
+                            <p>Embedded Systems, Electronics, Electrotechnics, Automatics. Active member in electro-dev activities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title lcd-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card glass-card">
+                        <div class="project-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Autonomous Agricultural Robot</h3>
+                        <p>Graduation Project (Mention Très Bien). Designed and developed an autonomous robot integrating embedded Deep Learning models for real-time tomato disease diagnosis (Computer Vision) and soil parameter analysis.</p>
+                        <div class="project-tech">
+                            <span>Edge AI</span>
+                            <span>Robotics</span>
+                            <span>Computer Vision</span>
+                        </div>
+                    </div>
+                    <div class="project-card glass-card">
+                        <div class="project-icon"><i class="fas fa-microchip"></i></div>
+                        <h3>IoT Architecture & Systems</h3>
+                        <p>Designed and led comprehensive IoT training covering sensor interfacing, data acquisition, and communication protocols (Wi-Fi, MQTT) for real-time monitoring applications.</p>
+                        <div class="project-tech">
+                            <span>IoT</span>
+                            <span>MQTT</span>
+                            <span>Microcontrollers</span>
+                        </div>
+                    </div>
+                    <div class="project-card glass-card">
+                        <div class="project-icon"><i class="fas fa-industry"></i></div>
+                        <h3>Industrial Hardware Diagnostics</h3>
+                        <p>Diagnosed complex hardware systems during industrial tenure, combining technical troubleshooting with teamwork to optimize production line efficiency.</p>
+                        <div class="project-tech">
+                            <span>Diagnostics</span>
+                            <span>Electronics</span>
+                            <span>Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-box glass-card">
+                    <h2 class="section-title lcd-title" style="margin-bottom: 40px;">Contact Me</h2>
+                    <p>I am currently seeking opportunities as a Firmware or Embedded Systems Developer. Feel free to reach out if you're looking for an engineer obsessed with building intelligent systems.</p>
+                    <a href="mailto:omar.mlika.2003@gmail.com" class="btn-primary" style="margin-top: 30px;">Say Hello</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Omar Mlika.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
