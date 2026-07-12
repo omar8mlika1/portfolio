@@ -309,24 +309,26 @@ footer { text-align: center; padding: 2rem; color: var(--text-secondary); font-s
 }
 
 @media (max-width: 768px) {
+    .interactive-hub { width: 100%; padding: 0 10px; }
+    .display-content { padding: 15px 10px; } /* Reduce huge nested padding */
     .profile-header { flex-direction: column; text-align: center; }
     .lcd-menu-container { max-width: 280px; width: 85%; }
     .lcd-header { font-size: 1.2rem; }
     .lcd-screen li { font-size: 1rem; padding: 8px 10px; }
     .projects-grid { grid-template-columns: 1fr; }
     .section-title { font-size: 2rem; }
-    .container { padding: 0 15px; }
+    .container { padding: 0; } /* Remove redundant container padding */
     .initial-message p { font-size: 0.9rem; }
     
     /* Mobile specific layout fixes */
-    .glass-card { padding: 1.2rem; } /* Reduces excessive inside space */
+    .glass-card { padding: 15px; } /* Reduces excessive inside space */
     .lcd-title { font-size: 1.5rem !important; padding: 8px 15px !important; width: 100%; max-width: 280px; box-sizing: border-box; } /* Fix Contact Me box overflow */
-    p, h1, h2, h3, span, div { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; } /* Fix long words overflowing like "diagnostic/measurement" */
+    p, h1, h2, h3, span, div { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; } /* Fix long words overflowing */
     
     /* Timeline adjustments for mobile */
     .timeline::before { left: 10px; }
-    .timeline-item { margin-left: 30px; padding: 1.2rem; }
-    .timeline-dot { left: -26px; width: 10px; height: 10px; top: 25px; }
+    .timeline-item { margin-left: 25px; padding: 15px; }
+    .timeline-dot { left: -21px; width: 10px; height: 10px; top: 25px; }
 }
 
 @media (max-width: 400px) {
