@@ -29,6 +29,9 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Background Animation */
@@ -77,7 +80,6 @@ h1, h2, h3 { font-weight: 600; color: var(--text-primary); }
 .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); text-decoration: none; letter-spacing: 1px; }
 .logo span { color: var(--accent-gold); }
 
-/* Interactive Hub (RPi) */
 .interactive-hub {
     padding-top: 100px;
     padding-bottom: 2rem;
@@ -89,6 +91,7 @@ h1, h2, h3 { font-weight: 600; color: var(--text-primary); }
     max-width: 1000px;
     margin: 0 auto;
     width: 95%;
+    flex: 1;
 }
 .rpi-container {
     position: relative;
@@ -264,6 +267,7 @@ h1, h2, h3 { font-weight: 600; color: var(--text-primary); }
     height: 100%; width: 2px; background: var(--glass-border);
 }
 .timeline-item { position: relative; margin-bottom: 2rem; margin-left: 50px; padding: 2rem; }
+.timeline-item:last-child { margin-bottom: 0; }
 .timeline-dot {
     position: absolute; left: -35px; top: 30px; width: 12px; height: 12px;
     border-radius: 50%; background: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold);
@@ -309,8 +313,8 @@ footer { text-align: center; padding: 2rem; color: var(--text-secondary); font-s
 }
 
 @media (max-width: 768px) {
-    .interactive-hub { width: 100%; padding: 0 10px; }
-    .display-content { padding: 15px 10px; } /* Reduce huge nested padding */
+    .interactive-hub { padding-bottom: 0.5rem; }
+    .display-content { padding: 15px 10px; min-height: auto; } /* Reduce huge nested padding */
     .profile-header { flex-direction: column; text-align: center; }
     .lcd-menu-container { max-width: 280px; width: 85%; }
     .lcd-header { font-size: 1.2rem; }
@@ -323,12 +327,15 @@ footer { text-align: center; padding: 2rem; color: var(--text-secondary); font-s
     /* Mobile specific layout fixes */
     .glass-card { padding: 15px; } /* Reduces excessive inside space */
     .lcd-title { font-size: 1.5rem !important; padding: 8px 15px !important; width: 100%; max-width: 280px; box-sizing: border-box; } /* Fix Contact Me box overflow */
-    p, h1, h2, h3, span, div { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; } /* Fix long words overflowing */
+    .glass-card p, .glass-card h3, .glass-card span { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; } /* Fix long words overflowing */
     
     /* Timeline adjustments for mobile */
     .timeline::before { left: 10px; }
-    .timeline-item { margin-left: 25px; padding: 15px; }
+    .timeline-item { margin-left: 25px; padding: 15px; margin-bottom: 1rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
     .timeline-dot { left: -21px; width: 10px; height: 10px; top: 25px; }
+    
+    footer { padding: 1rem; }
 }
 
 @media (max-width: 400px) {
