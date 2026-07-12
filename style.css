@@ -201,14 +201,41 @@ h1, h2, h3 { font-weight: 600; color: var(--text-primary); }
     align-items: center;
     gap: 1.5rem;
 }
+.profile-img-container {
+    position: relative;
+    width: 136px;
+    height: 136px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+.profile-img-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px dashed var(--accent-green);
+    box-shadow: 0 0 15px rgba(77, 166, 116, 0.4);
+    animation: spin-border 10s linear infinite, color-change 4s linear infinite;
+}
+@keyframes spin-border {
+    100% { transform: rotate(360deg); }
+}
+@keyframes color-change {
+    0%, 100% { border-color: #4DA674; box-shadow: 0 0 15px rgba(77, 166, 116, 0.4); }
+    25% { border-color: #00e5ff; box-shadow: 0 0 15px rgba(0, 229, 255, 0.4); }
+    50% { border-color: #ff3333; box-shadow: 0 0 15px rgba(255, 51, 51, 0.4); }
+    75% { border-color: #D4AF37; box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+}
 .profile-img {
-    width: 130px;
-    height: 130px;
+    width: 124px;
+    height: 124px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--accent-green);
-    box-shadow: 0 0 15px rgba(77, 166, 116, 0.4);
-    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
 }
 @media (max-width: 768px) {
     .profile-header {
